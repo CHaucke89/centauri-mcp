@@ -1,0 +1,13 @@
+[Unit]
+Description=Centauri Carbon MCP server
+After=network-online.target
+
+[Service]
+WorkingDirectory=/opt/centauri-mcp
+EnvironmentFile=/opt/centauri-mcp/.env
+ExecStart=/opt/centauri-mcp/.venv/bin/python server.py
+Restart=on-failure
+User=centauri-mcp
+
+[Install]
+WantedBy=multi-user.target
