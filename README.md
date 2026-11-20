@@ -1,7 +1,7 @@
-# centauri-mcp
+# CentauriMCP
 
-MCP server for a Klipper/Moonraker printer (Elegoo Centauri Carbon 2 on OpenCentauri COSMOS).
-Runs on your home server and talks to Moonraker over HTTP (port 7125).
+MCP server for a Klipper/Moonraker printer (Elegoo Centauri Carbon 2 Combo on OpenCentauri COSMOS).
+Runs on an external machine, such as your home server, and talks to Moonraker over HTTP (defaults to port 80 on COSMOS rather than the usual 7125).
 
 ## Setup
 ```bash
@@ -29,4 +29,3 @@ Or use `MCP_TRANSPORT=stdio` and register `python server.py` as a command (e.g. 
 - Motion, homing and motor-off are refused while printing.
 - `M112`, `SAVE_CONFIG`, `RUN_SHELL_COMMAND` are blocked in `send_gcode`.
 - `READ_ONLY=1` removes all mutating tools. `ALLOW_UNSAFE_GCODE=1` disables the G-code guard.
-- Serve over a trusted LAN/VPN only; never expose the port to the internet.
